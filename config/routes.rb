@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   # RESOURCES
+
   # Todo is a resource
   # - list of recources can be seen: index
   # - single recource can be seen: show
