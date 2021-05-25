@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   # Todo is a resource
   # - list of recources can be seen: index
   # - single recource can be seen: show
-  # create a new resource
+  # create a new todo
 
   get "todos", to: "todos#index"
+  get "todos/create", to: "todos#create"
   get "todos/:id", to: "todos#show"
 end
