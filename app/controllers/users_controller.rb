@@ -20,4 +20,12 @@ class UsersController < ApplicationController
       render plain: "Error! Please fill all columns[name,email,password]!"
     end
   end
+
+  def login
+    email, password = params[:email], params[:password]
+    user_email = User.find_by(email: email)
+    user_password = user_email != nil ? User.find_by(id: user_email.id).password : nil
+    response_text = user_password == password ? "true" : "false"
+    render plain: response_text
+  end
 end
