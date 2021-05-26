@@ -8,8 +8,8 @@ class TodosController < ApplicationController
 
   def show
     id = params[:id]
-    todo = Todo.find(id)
-    render plain: todo.to_pleasent_string
+    todo = Todo.find_by(id: id)
+    todo != nil ? (render plain: todo.to_pleasent_string) : (render plain: "Error! Invalid todo_id #{id}")
   end
 
   def create
@@ -26,13 +26,18 @@ class TodosController < ApplicationController
 
   def update
     id = params[:id]
-    todo_text = params[:todo_text]
-    completed = params[:completed]
-    todo = Todo.find(id)
-    todo_text != nil ? todo.todo_text = todo_text : nil
-    completed != nil ? todo.completed = completed : nil
-    todo.save!
+    todo = Todo.find_by(id: id)
+    if (todo != nil)
+      todo_text, completed, due_date = params[:todo_text], params[:completed], params[:due_date]
 
-    render plain: "Update todo completed status to #{completed}"
+      todo_text != nil ? todo.todo_text = todo_text : nil
+      due_date != nil ? todo.due_date = due_date : nil
+      completed != nil ? todo.completed = completed : nil
+      todo.save!
+
+      render plain: "Update todo completed status to #{completed}"
+    else
+      render plain: "Error! invalid id #{id}"
+    end
   end
 end
