@@ -1,0 +1,132 @@
+body {
+    font-family: Open Sans, sans-serif;
+    max-width: 460px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.TodoPage-title {
+    font-size: 20px;
+    line-height: 1.4;
+    color: #453C52;
+    letter-spacing: 0.14px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.TodoSection {
+    margin-bottom: 20px;
+}
+
+.AddTodo {
+    display: flex;
+    align-items: stretch;
+    height: 32px;
+    margin-bottom: 24px;
+}
+
+.TodoText {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #453C53;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #BFB8CC;
+}
+
+.TodoDate {
+    padding: 6px;
+    width: 130px;
+    background-color: white;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #BFB8CC;
+}
+
+.Add {
+    font-size: 14px;
+    padding: 6px 22px;
+    background-color: #48BB78;
+    color: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.TodoSectionTitle {
+    display: flex;
+    color: #453C52;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.TodoSectionTitle-text {
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 8px;
+    line-height: 1.4;
+    letter-spacing: 0.1px;
+}
+
+.TodoSectionTitle-remaining {
+    font-size: 12px;
+}
+
+.TodoItem {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+    margin-bottom: 10px;
+    height: 25px;
+    width: 100%;
+}
+
+.TodoItemCheckBox {
+    background: #FFFFFF;
+    border: 1px solid #BFB8CC;
+    border-radius: 4px;
+}
+
+.TodoSection-todo {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-left: 5px;
+    color: #453C52;
+    letter-spacing: 0.1px;
+}
+
+.todo_Date {
+    margin-left: 8px;
+    color: #726A7E;
+    font-size: 12px;
+}
+
+.overdue {
+    color: #C53030;
+    margin-left: 10px;
+    font-size: 12px;
+    display: inline;
+}
+
+.DeleteTodo {
+    margin-left: 8px;
+    visibility: hidden;
+}
+
+.DeleteTodo>img {
+    width: 16px;
+}
+
+.TodoItem:hover .DeleteTodo {
+    visibility: visible;
+}
+
+.TodoItem:hover .DeleteTodo:hover {
+    cursor: pointer;
+}
+
+.TodoItem:hover {
+    max-width: fit-content;
+    background-color: #F1EDF7;
+    border-radius: 4px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-manager</title>
+    <link rel="stylesheet" tyep="text/stylesheet" href="reset.css" />
+    <link rel="stylesheet" tyep="text/stylesheet" href="todo-app.css" />
+</head>
+
+<body>
+    <article class="TodoPageMain">
+        <h1 class="TodoPage-title">My Todo-list</h1>
+        <section class="AddTodo">
+            <input class="TodoText" type="text" placeholder="what's next?" />
+            <input class="TodoDate" type="date" />
+            <input class="Add" type="button" value="Add" />
+        </section>
+
+        <section class="TodoSection">
+            <div class="TodoSectionTitle">
+                <p class="TodoSectionTitle-text">Due Today</p>
+                <p class="TodoSectionTitle-remaining">0/4</p>
+            </div>
+
+            <ul>
+                <li class="TodoItem">
+                    <input class="TodoItemCheckBox" type="checkbox" />
+                    <p class="TodoSection-todo">Submit SaaS 201 project</p>
+                    <p class="overdue">Overdue</p>
+                    <a href="#" class="DeleteTodo"><img src="delete.png" alt="delete" /></a>
+                </li>
+
+                <li class="TodoItem">
+                    <input class="TodoItemCheckBox" type="checkbox" />
+                    <p class="TodoSection-todo">Call accountant</p>
+                    <p class="overdue"></p>
+                    <a href="#" class="DeleteTodo"><img src="delete.png" alt="delete" /></a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="TodoSection">
+            <div class="TodoSectionTitle">
+                <p class="TodoSectionTitle-text">Due Tomorrow</p>
+                <p class="TodoSectionTitle-remaining">0/3</p>
+            </div>
+
+            <ul>
+                <li class="TodoItem">
+                    <input class="TodoItemCheckBox" type="checkbox" />
+                    <p class="TodoSection-todo">Refill groceries</p>
+                    <p class="overdue"></p>
+                    <a href="#" class="DeleteTodo"><img src="delete.png" alt="delete" /></a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="TodoSection">
+            <div class="TodoSectionTitle">
+                <p class="TodoSectionTitle-text">Remaining</p>
+                <p class="TodoSectionTitle-remaining">0/3</p>
+            </div>
+
+            <ul>
+                <li class="TodoItem">
+                    <input class="TodoItemCheckBox" type="checkbox" />
+                    <p class="TodoSection-todo">Type something</p>
+                    <p class="todo_Date">Jan 21</p>
+                    <p class="overdue"></p>
+                    <a href="#" class="DeleteTodo"><img src="delete.png" alt="delete" /></a>
+                </li>
+
+                <li class="TodoItem">
+                    <input class="TodoItemCheckBox" type="checkbox" />
+                    <p class="TodoSection-todo">Type something</p>
+                    <p class="todo_Date">Jan 21</p>
+                    <p class="overdue"></p>
+                    <a href="#" class="DeleteTodo"><img src="delete.png" alt="delete" /></a>
+                </li>
+
+                <li class="TodoItem">
+                    <input class="TodoItemCheckBox" type="checkbox" />
+                    <p class="TodoSection-todo">Type something</p>
+                    <p class="todo_Date">Jan 21</p>
+                    <p class="overdue"></p>
+                    <a href="#" class="DeleteTodo"><img src="delete.png" alt="delete" /></a>
+                </li>
+            </ul>
+        </section>
+    </article>
+</body>
+
+</html>
