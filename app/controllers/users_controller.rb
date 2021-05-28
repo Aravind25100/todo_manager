@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def create
     name, email, password = params[:name], params[:email], params[:password]
-    if (name != nil and password != nil and email != nil)
+    if (name != nil && password != nil && email != nil)
       response_text = ""
       if !User.find_by(email: email)
         new_user = User.create!(name: name, email: email, password: password)
@@ -22,9 +22,10 @@ class UsersController < ApplicationController
   end
 
   def login
-    email, password = params[:email], params[:password]
+    email = params[:email]
+    password = params[:password]
     user_email = User.find_by(email: email)
-    user_password = user_email != nil ? User.find_by(id: user_email.id).password : nil
+    user_password = user_email != nil ? user_email.password : nil
     response_text = user_password == password ? "true" : "false"
     render plain: response_text
   end

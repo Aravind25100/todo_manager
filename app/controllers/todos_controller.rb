@@ -25,19 +25,15 @@ class TodosController < ApplicationController
   end
 
   def update
-    id = params[:id]
-    todo = Todo.find_by(id: id)
-    if (todo != nil)
-      todo_text, completed, due_date = params[:todo_text], params[:completed], params[:due_date]
-
-      todo_text != nil ? todo.todo_text = todo_text : nil
-      due_date != nil ? todo.due_date = due_date : nil
-      completed != nil ? todo.completed = completed : nil
+    begin
+      id = params[:id]
+      completed = params[:completed]
+      todo = Todo.find(id)
+      todo.completed = completed
       todo.save!
-
-      render plain: "Update todo completed status to #{completed}"
-    else
-      render plain: "Error! invalid id #{id}"
+      render plain: "Updated todo completed status to #{completed}"
+    rescue Exception => e
+      render plain: e.message
     end
   end
 end
