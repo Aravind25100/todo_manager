@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     password = params[:password]
     user_email = User.find_by(email: email)
     user_password = user_email != nil ? user_email.password : nil
-    response_text = user_password == password ? "true" : "false"
+    response_text = user_password == password
     render plain: response_text
   end
 end
