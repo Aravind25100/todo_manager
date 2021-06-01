@@ -1,0 +1,8 @@
+<h1> Todo list</h1>
+
+<% Todo.all.each do |todo| %>
+   <div style="display:flex;align-items:center;">
+     <p style="margin-right:10px;"><%= todo.todo_text %></p>
+     <p><%= todo.due_date %></p>
+   </div>
+<% end %>

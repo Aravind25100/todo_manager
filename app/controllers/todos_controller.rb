@@ -4,6 +4,7 @@ class TodosController < ApplicationController
 
   def index
     render plain: Todo.all.order(:due_date).map { |todo| todo.to_pleasent_string }.join("\n")
+    # render "index"
   end
 
   def show
@@ -25,15 +26,16 @@ class TodosController < ApplicationController
   end
 
   def update
-    begin
-      id = params[:id]
-      completed = params[:completed]
-      todo = Todo.find(id)
-      todo.completed = completed
-      todo.save!
-      render plain: "Updated todo completed status to #{completed}"
-    rescue Exception => e
-      render plain: e.message
+    todo = Todo.find_by(id: params[:id])
+    if todo.blank?
+      render plain: "Todo could not be found"
+      return
+    end
+
+    if todo.update(completed: params[:completed])
+      render plain: "Updated todo"
+    else
+      render plain: "Failed to update todo: #{todo.errors.full_messages.join(", ")}"
     end
   end
 end
