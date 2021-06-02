@@ -101,13 +101,6 @@ body {
     font-size: 12px;
 }
 
-.overdue {
-    color: #C53030;
-    margin-left: 10px;
-    font-size: 12px;
-    display: inline;
-}
-
 .DeleteTodo {
     margin-left: 8px;
     visibility: hidden;

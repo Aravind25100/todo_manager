@@ -1,8 +1,18 @@
-<h1> Todo list</h1>
+<article class="TodoPageMain">
+  <h1 class="TodoPage-title">My Todo-list</h1>
+  <section class="AddTodo">
+    <input class="TodoText" type="text" placeholder="what's next?" />
+    <input class="TodoDate" type="date" />
+    <input class="Add" type="button" value="Add" />
+  </section>
 
-<% Todo.all.each do |todo| %>
-   <div style="display:flex;align-items:center;">
-     <p style="margin-right:10px;"><%= todo.todo_text %></p>
-     <p><%= todo.due_date %></p>
-   </div>
-<% end %>
+  <%= render partial: "todos_section", locals: { section_title: "Overdue",
+                                                 todos: Todo.overdue,
+                                                 show_date: true} %>
+  <%= render partial: "todos_section", locals: { section_title: "Due Today",
+                                                 todos: Todo.due_today,
+                                                 show_date: false} %>
+  <%= render partial: "todos_section", locals: { section_title: "Due Later",
+                                                 todos: Todo.due_later,
+                                                 show_date: true}  %>
+</article>
