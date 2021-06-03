@@ -106,7 +106,7 @@ body {
     visibility: hidden;
 }
 
-.DeleteTodo>img {
+.deleteTodoImage {
     width: 16px;
 }
 
