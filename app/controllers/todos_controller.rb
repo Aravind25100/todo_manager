@@ -3,7 +3,6 @@ class TodosController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    # render plain: Todo.all.order(:due_date).map { |todo| todo.to_pleasent_string }.join("\n")
     render "index"
   end
 
@@ -11,7 +10,6 @@ class TodosController < ApplicationController
     id = params[:id]
     todo = Todo.find_by(id: id)
     render "todo"
-    # todo != nil ? (render plain: todo.to_pleasent_string) : (render plain: "Error! Invalid todo_id #{id}")
   end
 
   def create
@@ -22,8 +20,7 @@ class TodosController < ApplicationController
       due_date: due_date,
       completed: false,
     )
-    response_text = "Your todo is created with the id #{new_todo.id}"
-    render plain: response_text
+    redirect_to todos_path
   end
 
   def update
