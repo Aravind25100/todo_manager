@@ -30,8 +30,9 @@ class TodosController < ApplicationController
       return
     end
 
-    if todo.update(completed: params[:completed])
-      render plain: "Updated todo"
+    completed = params[:completed] ? true : false
+    if todo.update(completed: completed)
+      redirect_to todos_path
     else
       render plain: "Failed to update todo: #{todo.errors.full_messages.join(", ")}"
     end
