@@ -1,7 +1,4 @@
 class TodosController < ApplicationController
-  #Skip verfying the authenticity token
-  skip_before_action :verify_authenticity_token
-
   def index
     render "index"
   end
