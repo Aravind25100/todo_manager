@@ -1,5 +1,5 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   def to_pleasent_string
-    "#{id}. User: #{name} and e-mail: #{email}"
+    "#{id}. User: #{first_name} #{last_name} and e-mail: #{email}"
   end
 end
