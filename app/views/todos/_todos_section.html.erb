@@ -10,7 +10,7 @@
           <%= form_with(url:"/todos/#{todo.id}", method: "PUT") do  %>
              <%= check_box_tag("completed",
                                 nil,
-                                todo.completed ? true : false,
+                                todo.completed,
                                 class: "TodoItemCheckBox",
                                 :onclick=>"this.form.submit()"
                               )
