@@ -1,3 +1,8 @@
-<h1>Todo manager</h1>
+<h1 class="home-title">Todo manager</h1>
 
-<p>If you are a new user, sign-up here</p>
+<h3 class="home-authenticate">
+    If you are a new user, <%= link_to "sign-up here!", new_user_path %>
+</h3>
+<h3 class="home-authenticate">
+    If you are an existing user, <%= link_to "sign-in here!", new_sessions_path %>
+</h3>
