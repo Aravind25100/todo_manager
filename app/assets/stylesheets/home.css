@@ -18,13 +18,12 @@
 }
 
 .FlashError {
-    max-width: max-content;
+    max-width: fit-content;
     color: darkred;
-    margin-left: 50px;
     margin-bottom: 20px;
     font-size: 16px;
     padding: 10px;
-    border: 1px solid darkred;
+    border: 1px solid transparent;
     border-radius: 4px;
     background-color: rgb(247, 210, 210);
 }
