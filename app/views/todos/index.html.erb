@@ -8,7 +8,6 @@
     <%= date_field_tag("due_date",nil,class:"TodoDate") %>
     <%= button_tag("Add",type: "submit",class:"Add")%>
   <% end %>
-
   <%= render partial: "todos_section", locals: { section_title: "Overdue",
                                                  todos: @todos.overdue.not_completed,
                                                  show_date: true} %>
