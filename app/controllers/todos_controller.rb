@@ -5,9 +5,7 @@ class TodosController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    todo = current_user.todos.find_by(id: id)
-    render "todo"
+    render template: "todos/todo", locals: { todos: current_user.todos }
   end
 
   def create

@@ -1,11 +1,31 @@
-.home-title {
-    font-size: 20px;
-    margin-bottom: 20px;
+.HomePage {
+    margin-top: 40%;
 }
 
-.home-authenticate {
-    font-size: 16px;
-    margin-bottom: 20px;
+.home-title {
+    font-size: 48px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 1.6px;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.LoginSession {
+    margin-top: 30px;
+    display: flex;
+}
+
+.SignIn,
+.SignUp {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 6px 22px;
+    background-color: #48BB78;
+    color: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin-left: 50px;
 }
 
 .userHeader {

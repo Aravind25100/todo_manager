@@ -1,1 +1,9 @@
-<h1>Specified todo </h1>
+<h1 class="TodoList">Todos</h1>
+
+<% todos.each do |todo| %>
+  <ul class="todo">
+    <li><%= todo.todo_text %></li>
+  </ul>
+<% end %>
+
+<%= link_to "Back",todos_path,class:"back" %>

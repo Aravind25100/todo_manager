@@ -1,5 +1,8 @@
 <article class="TodoPageMain">
-  <h1 class="TodoPage-title">My Todo-list</h1>
+  <div class="TodoContainer">
+     <h1 class="TodoPage-title">My Todo-list</h1>
+     <%= link_to "Show all","/todos/id",class:"ShowAllTodos"%>
+  </div>
   <%= form_with(url: "/todos", method: "POST", class: "AddTodo" ) do  %>
     <%= text_field_tag("todo_text",nil,class: "TodoText",placeholder: "what's next?")%>
     <%= date_field_tag("due_date",nil,class:"TodoDate") %>
