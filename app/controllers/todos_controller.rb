@@ -1,27 +1,33 @@
 class TodosController < ApplicationController
   def index
+    @todos = current_user.todos
     render "index"
   end
 
   def show
-    id = params[:id]
-    todo = Todo.find_by(id: id)
-    render "todo"
+    render template: "todos/todo", locals: { todos: current_user.todos }
   end
 
   def create
     todo_text = params[:todo_text]
-    due_date = DateTime.parse(params[:due_date])
-    new_todo = Todo.create!(
+    due_date = params[:due_date]
+    new_todo = Todo.new(
       todo_text: todo_text,
       due_date: due_date,
       completed: false,
+      user_id: current_user.id,
     )
-    redirect_to todos_path
+
+    if new_todo.save
+      redirect_to todos_path
+    else
+      flash[:error] = new_todo.errors.full_messages.join(", ")
+      redirect_to todos_path
+    end
   end
 
   def update
-    todo = Todo.find_by(id: params[:id])
+    todo = current_user.todos.find_by(id: params[:id])
     if todo.blank?
       render plain: "Todo could not be found"
       return
@@ -37,7 +43,7 @@ class TodosController < ApplicationController
 
   def destroy
     id = params[:id]
-    todo = Todo.find(id)
+    todo = current_user.todos.find(id)
     todo.destroy
     redirect_to todos_path
   end

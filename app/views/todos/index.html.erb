@@ -1,5 +1,8 @@
 <article class="TodoPageMain">
-  <h1 class="TodoPage-title">My Todo-list</h1>
+  <div class="TodoContainer">
+     <h1 class="TodoPage-title">My Todo-list</h1>
+     <%= link_to "Show all","/todos/id",class:"ShowAllTodos"%>
+  </div>
   <%= form_with(url: "/todos", method: "POST", class: "AddTodo" ) do  %>
     <%= text_field_tag("todo_text",nil,class: "TodoText",placeholder: "what's next?")%>
     <%= date_field_tag("due_date",nil,class:"TodoDate") %>
@@ -7,12 +10,12 @@
   <% end %>
 
   <%= render partial: "todos_section", locals: { section_title: "Overdue",
-                                                 todos: Todo.overdue.not_completed,
+                                                 todos: @todos.overdue.not_completed,
                                                  show_date: true} %>
   <%= render partial: "todos_section", locals: { section_title: "Due Today",
-                                                 todos: Todo.due_today,
+                                                 todos: @todos.due_today,
                                                  show_date: false} %>
   <%= render partial: "todos_section", locals: { section_title: "Due Later",
-                                                 todos: Todo.due_later,
+                                                 todos: @todos.due_later,
                                                  show_date: true}  %>
 </article>
