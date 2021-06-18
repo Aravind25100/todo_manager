@@ -4,7 +4,7 @@
      <%= link_to "Show all","/todos/id",class:"ShowAllTodos"%>
   </div>
   <%= form_with(url: "/todos", method: "POST", class: "AddTodo" ) do  %>
-    <%= text_field_tag("todo_text",nil,class: "TodoText",placeholder: "what's next?")%>
+    <%= text_field_tag("todo_text",nil,class: "TodoText",placeholder: "what's next?",autofocus: true)%>
     <%= date_field_tag("due_date",nil,class:"TodoDate") %>
     <%= button_tag("Add",type: "submit",class:"Add")%>
   <% end %>
