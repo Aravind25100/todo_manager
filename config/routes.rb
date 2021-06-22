@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :todos
   resources :users
-  get "/" => "home#index"
   root to: "home#index"
 
   get "/signin", to: "sessions#new", as: :new_sessions
