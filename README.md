@@ -1,4 +1,4 @@
-                                                                   Todo Manager
+                                                              Todo Manager
 
 In this application you can sign up or sign in. The user can 
  * create new todos 
